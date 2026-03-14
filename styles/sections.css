@@ -1,7 +1,19 @@
 /* Intro */
 
 .intro {
-  padding: 3.5rem 0;
+  padding: 4.5rem 0;
+}
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 4rem;
+  align-items: start;
+}
+
+.intro-copy {
+  display: grid;
+  gap: 0;
 }
 
 .intro h1 {
@@ -19,8 +31,31 @@
   color: var(--muted);
 }
 
+.intro-photo img {
+  display: block;
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 50%;
+  filter: grayscale(15%);
+}
+
 @media (max-width: 640px) {
   .intro {
-    padding: 2.5rem 0;
+    padding: 3rem 0;
+  }
+
+  .intro-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .intro-photo {
+    order: -1;
+  }
+
+  .intro-photo img {
+    width: 120px;
+    height: 120px;
   }
 }

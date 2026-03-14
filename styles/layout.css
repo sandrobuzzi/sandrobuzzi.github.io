@@ -1,7 +1,7 @@
 .wrap {
   max-width: var(--container);
   margin: 0 auto;
-  padding: 0 1.75rem;
+  padding: 0 2.5rem;
 }
 
 /* Header */
@@ -40,7 +40,7 @@
 /* Sections */
 
 .section {
-  padding: 3.5rem 0;
+  padding: 4.5rem 0;
   border-top: 1px solid var(--line);
 }
 
@@ -61,7 +61,7 @@
 
 @media (max-width: 640px) {
   .wrap {
-    padding: 0 1.25rem;
+    padding: 0 1.5rem;
   }
 
   .site-header {
@@ -72,6 +72,6 @@
   }
 
   .section {
-    padding: 2.5rem 0;
+    padding: 3rem 0;
   }
 }
