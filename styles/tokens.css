@@ -1,0 +1,8 @@
+:root {
+  --bg: #f8f6f2;
+  --text: #191714;
+  --muted: #6e6760;
+  --accent: #8b4a2a;
+  --line: rgba(0, 0, 0, 0.09);
+  --container: 700px;
+}

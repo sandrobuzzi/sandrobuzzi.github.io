@@ -1,0 +1,119 @@
+/* Inline links */
+
+.link {
+  border-bottom: 1px solid var(--line);
+  transition: border-color 140ms ease;
+}
+
+.link:hover {
+  border-color: var(--accent);
+}
+
+/* External link row */
+
+.ext-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.ext-links a {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent);
+  border-bottom: 1px solid rgba(139, 74, 42, 0.3);
+  transition: border-color 140ms ease;
+}
+
+.ext-links a:hover {
+  border-color: var(--accent);
+}
+
+/* Research list */
+
+.research-list {
+  display: grid;
+  gap: 2rem;
+}
+
+.research-item h3 {
+  margin-bottom: 0.3rem;
+}
+
+.research-item p {
+  color: var(--muted);
+  font-size: 0.9rem;
+  max-width: 52ch;
+}
+
+/* Publication list */
+
+.pub-list {
+  display: grid;
+  gap: 2rem;
+}
+
+.pub {
+  display: grid;
+  grid-template-columns: 3rem 1fr;
+  gap: 0 1.25rem;
+}
+
+.pub-year {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--muted);
+  padding-top: 0.15rem;
+  letter-spacing: 0.04em;
+}
+
+.pub-title {
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 0.3rem;
+}
+
+.pub-title a {
+  border-bottom: 1px solid var(--line);
+  transition: border-color 140ms ease;
+}
+
+.pub-title a:hover {
+  border-color: var(--accent);
+}
+
+.pub-authors {
+  font-size: 0.875rem;
+  color: var(--muted);
+  margin-bottom: 0.25rem;
+}
+
+.pub-authors .self {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.pub-venue {
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.pub-venue a {
+  color: var(--accent);
+  border-bottom: 1px solid rgba(139, 74, 42, 0.3);
+  transition: border-color 140ms ease;
+}
+
+.pub-venue a:hover {
+  border-color: var(--accent);
+}
+
+/* Responsive */
+
+@media (max-width: 480px) {
+  .pub {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
+}
