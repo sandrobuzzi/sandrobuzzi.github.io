@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="styles/layout.css" />
     <link rel="stylesheet" href="styles/components.css" />
     <link rel="stylesheet" href="styles/sections.css" />
+    <link rel="stylesheet" href="styles/debug.css" />
   </head>
   <body>
     <div class="wrap">
@@ -38,17 +39,10 @@
           <div class="intro-grid">
             <div class="intro-copy">
               <h1>Alessandro Buzzi</h1>
-              <p class="role-institution">Graduate Researcher, MIT</p>
-              <p class="role-location">Quantum Photonics and AI Group</p>
+              <p class="role-institution">PhD Candidate &thinsp;&middot;&thinsp; MIT</p>
               <p class="bio">
-                MIT researcher developing
-                <span class="kw">integrated photonic and electronic hardware</span>
-                for next-generation computing. My work bridges photonics,
-                electronics, and <span class="kw">AI-driven control</span>,
-                combining physics-based modeling, device design, and
-                experimental realization to advance scalable platforms for
-                <span class="kw">quantum optics</span> and
-                <span class="kw">photonic interconnects</span>.
+                I design, fabricate, and control integrated photonic systems
+                for computing and quantum technologies.
               </p>
               <div class="ext-links">
                 <a
@@ -130,15 +124,7 @@
                   L. Li, W. Yzaguirre, M. Sirotin, G. Gilbert, G. Clark,
                   D. Englund
                 </p>
-                <p class="pub-venue">
-                  arXiv &middot;
-                  <a
-                    href="https://arxiv.org/abs/2601.20025"
-                    target="_blank"
-                    rel="noreferrer"
-                    >preprint</a
-                  >
-                </p>
+                <p class="pub-venue">arXiv preprint</p>
               </div>
             </li>
 
@@ -159,15 +145,7 @@
                   O. Hooybergs, H. Raniwala, V. Saggio, C. Errando-Herranz,
                   D. Englund
                 </p>
-                <p class="pub-venue">
-                  <em>Nature Communications</em> 16, 8829 &middot;
-                  <a
-                    href="https://doi.org/10.1038/s41467-025-63871-8"
-                    target="_blank"
-                    rel="noreferrer"
-                    >DOI</a
-                  >
-                </p>
+                <p class="pub-venue"><em>Nature Communications</em> 16, 8829</p>
               </div>
             </li>
 
@@ -187,15 +165,7 @@
                   <span class="self">A. Buzzi</span>, R. A. Foster,
                   M. Colangelo, K. K. Berggren
                 </p>
-                <p class="pub-venue">
-                  <em>Nature Electronics</em> 8, 417&ndash;425 &middot;
-                  <a
-                    href="https://doi.org/10.1038/s41928-025-01376-4"
-                    target="_blank"
-                    rel="noreferrer"
-                    >DOI</a
-                  >
-                </p>
+                <p class="pub-venue"><em>Nature Electronics</em> 8, 417&ndash;425</p>
               </div>
             </li>
 
@@ -216,15 +186,7 @@
                   <span class="self">A. Buzzi</span>, I. Christen, C. Panuski,
                   C. Errando-Herranz, D. Englund
                 </p>
-                <p class="pub-venue">
-                  arXiv &middot;
-                  <a
-                    href="https://arxiv.org/abs/2501.17240"
-                    target="_blank"
-                    rel="noreferrer"
-                    >preprint</a
-                  >
-                </p>
+                <p class="pub-venue">arXiv preprint</p>
               </div>
             </li>
 
@@ -246,15 +208,7 @@
                   <span class="self">A. Buzzi</span>, M. Colangelo,
                   J. C. Bienfang, A. Restelli, K. K. Berggren
                 </p>
-                <p class="pub-venue">
-                  <em>Physical Review Applied</em> 22, 024020 &middot;
-                  <a
-                    href="https://doi.org/10.1103/PhysRevApplied.22.024020"
-                    target="_blank"
-                    rel="noreferrer"
-                    >DOI</a
-                  >
-                </p>
+                <p class="pub-venue"><em>Physical Review Applied</em> 22, 024020</p>
               </div>
             </li>
 
@@ -273,15 +227,7 @@
                   <span class="self">A. Buzzi</span>, M. Castellani,
                   R. A. Foster, O. Medeiros, M. Colangelo, K. K. Berggren
                 </p>
-                <p class="pub-venue">
-                  <em>Applied Physics Letters</em> 122, 142601 &middot;
-                  <a
-                    href="https://doi.org/10.1063/5.0144686"
-                    target="_blank"
-                    rel="noreferrer"
-                    >DOI</a
-                  >
-                </p>
+                <p class="pub-venue"><em>Applied Physics Letters</em> 122, 142601</p>
               </div>
             </li>
 
@@ -301,15 +247,7 @@
                   <span class="self">A. Buzzi</span>, O. Medeiros,
                   M. Colangelo, K. K. Berggren
                 </p>
-                <p class="pub-venue">
-                  <em>Applied Physics Letters</em> 122, 152601 &middot;
-                  <a
-                    href="https://doi.org/10.1063/5.0144685"
-                    target="_blank"
-                    rel="noreferrer"
-                    >DOI</a
-                  >
-                </p>
+                <p class="pub-venue"><em>Applied Physics Letters</em> 122, 152601</p>
               </div>
             </li>
           </ol>
@@ -343,5 +281,10 @@
         Alessandro Buzzi &middot; Cambridge, Massachusetts
       </footer>
     </div>
+    <script>
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "d") document.body.classList.toggle("debug");
+      });
+    </script>
   </body>
 </html>

@@ -1,8 +1,30 @@
 :root {
-  --bg: #f8f6f2;
-  --text: #191714;
-  --muted: #6e6760;
+  /* Colors */
+  --bg:     #f8f6f2;
+  --text:   #191714;
+  --muted:  #6e6760;
   --accent: #8b4a2a;
-  --line: rgba(0, 0, 0, 0.09);
+  --line:   rgba(0, 0, 0, 0.09);
+
+  /* Spacing — 8px base unit */
+  --sp-1: 0.5rem;   /*  8px */
+  --sp-2: 1rem;     /* 16px */
+  --sp-3: 1.5rem;   /* 24px */
+  --sp-4: 2rem;     /* 32px */
+  --sp-5: 2.5rem;   /* 40px */
+  --sp-6: 3rem;     /* 48px */
+  --sp-7: 4rem;     /* 64px */
+  --sp-8: 5rem;     /* 80px */
+  --sp-9: 6rem;     /* 96px */
+
+  /* Type scale — Major Third ×1.25 */
+  --size-xs:      0.7rem;   /* ~11px — labels, venue, year  */
+  --size-sm:      0.8rem;   /* ~13px — nav, captions, meta  */
+  --size-base:    1rem;     /*  16px — body, h3             */
+  --size-lg:      1.25rem;  /*  20px — reserved             */
+  --size-xl:      1.5rem;   /*  24px — reserved             */
+  --size-display: clamp(2.5rem, 4.5vw, 3.5rem); /* name    */
+
+  /* Layout */
   --container: 900px;
 }

@@ -1,0 +1,63 @@
+/* ─── Debug overlay — toggle with D key ─────────────────────────────────── */
+
+/* 8px baseline grid */
+body.debug {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent calc(var(--sp-1) - 1px),
+    rgba(220, 0, 0, 0.06) calc(var(--sp-1) - 1px),
+    rgba(220, 0, 0, 0.06) var(--sp-1)
+  );
+}
+
+/* Container boundary — blue */
+body.debug .wrap {
+  outline: 1px solid rgba(0, 80, 255, 0.5);
+}
+
+/* Sections and intro — green */
+body.debug .site-header,
+body.debug .intro,
+body.debug .section,
+body.debug .site-footer {
+  outline: 1px solid rgba(0, 180, 60, 0.55);
+}
+
+/* Grids and lists — orange dashed */
+body.debug .intro-grid,
+body.debug .research-list,
+body.debug .pub-list,
+body.debug .pub,
+body.debug .ext-links {
+  outline: 1px dashed rgba(255, 120, 0, 0.65);
+}
+
+/* Text nodes — purple */
+body.debug h1,
+body.debug h2,
+body.debug h3,
+body.debug p {
+  outline: 1px solid rgba(160, 0, 200, 0.25);
+}
+
+/* Photo */
+body.debug .intro-photo img {
+  outline: 2px solid rgba(0, 180, 60, 0.6);
+  outline-offset: 3px;
+}
+
+/* Label in corner */
+body.debug::before {
+  content: "DEBUG";
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  font-family: "Manrope", monospace;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: rgba(220, 0, 0, 0.6);
+  pointer-events: none;
+  z-index: 9999;
+}
