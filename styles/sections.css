@@ -21,17 +21,17 @@
 }
 
 .intro .role-institution {
-  font-size: var(--size-lg);
+  font-size: var(--size-sm);
   font-weight: 500;
-  color: var(--text);
-  margin-bottom: var(--sp-3);
+  color: var(--muted);
+  margin-bottom: var(--sp-4);
 }
 
 .intro .bio {
   font-size: var(--size-lg);
-  color: var(--muted);
-  line-height: 1.65;
-  max-width: 34ch;
+  color: var(--text);
+  line-height: 1.6;
+  max-width: 36ch;
 }
 
 .intro .bio .kw {

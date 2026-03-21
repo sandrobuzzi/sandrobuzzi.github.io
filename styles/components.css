@@ -24,20 +24,26 @@
 
 .research-list {
   display: grid;
-  gap: var(--sp-5);
+  gap: 0;
 }
 
 .research-item {
-  transition: box-shadow 160ms ease, border-color 160ms ease;
+  padding: var(--sp-4) 0;
+  border-top: 1px solid var(--line);
+}
+
+.research-item:last-child {
+  border-bottom: 1px solid var(--line);
 }
 
 .research-item h3 {
-  margin-bottom: var(--sp-1);
+  margin-bottom: var(--sp-2);
 }
 
 .research-item p {
-  font-size: var(--size-sm);
+  font-size: var(--size-base);
   color: var(--muted);
+  max-width: 58ch;
 }
 
 /* Publication list */
@@ -101,19 +107,6 @@
 
 .pub-venue a:hover {
   border-color: var(--accent);
-}
-
-.focus-card,
-.feature-card,
-.contact-panel {
-  transition: box-shadow 160ms ease, border-color 160ms ease;
-}
-
-.research-item:hover,
-.focus-card:hover,
-.feature-card:hover {
-  box-shadow: 0 24px 64px rgba(68, 45, 24, 0.13);
-  border-color: rgba(23, 20, 17, 0.15);
 }
 
 /* Responsive */
