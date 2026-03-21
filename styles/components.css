@@ -12,7 +12,7 @@
   font-weight: 700;
   color: var(--accent);
   letter-spacing: 0.01em;
-  border-bottom: 1px solid rgba(139, 74, 42, 0.25);
+  border-bottom: 1px solid var(--accent-line);
   transition: border-color 140ms ease;
 }
 
@@ -25,6 +25,10 @@
 .research-list {
   display: grid;
   gap: var(--sp-5);
+}
+
+.research-item {
+  transition: box-shadow 160ms ease, border-color 160ms ease;
 }
 
 .research-item h3 {
@@ -91,12 +95,25 @@
 
 .pub-venue a {
   color: var(--accent);
-  border-bottom: 1px solid rgba(139, 74, 42, 0.3);
+  border-bottom: 1px solid var(--accent-line);
   transition: border-color 140ms ease;
 }
 
 .pub-venue a:hover {
   border-color: var(--accent);
+}
+
+.focus-card,
+.feature-card,
+.contact-panel {
+  transition: box-shadow 160ms ease, border-color 160ms ease;
+}
+
+.research-item:hover,
+.focus-card:hover,
+.feature-card:hover {
+  box-shadow: 0 24px 64px rgba(68, 45, 24, 0.13);
+  border-color: rgba(23, 20, 17, 0.15);
 }
 
 /* Responsive */

@@ -37,6 +37,11 @@
   color: var(--text);
 }
 
+.site-nav a.active {
+  color: var(--text);
+  font-weight: 600;
+}
+
 /* Sections */
 
 .section {
