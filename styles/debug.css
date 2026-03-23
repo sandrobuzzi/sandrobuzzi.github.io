@@ -1,36 +1,52 @@
 /* ─── Debug overlay — toggle with D key ─────────────────────────────────── */
 
-/* 8px baseline grid */
+/* Horizontal baseline grid (8px rows) */
 body.debug {
   background-image: repeating-linear-gradient(
     to bottom,
     transparent 0,
     transparent calc(var(--sp-1) - 1px),
-    rgba(220, 0, 0, 0.06) calc(var(--sp-1) - 1px),
-    rgba(220, 0, 0, 0.06) var(--sp-1)
+    rgba(0, 80, 255, 0.05) calc(var(--sp-1) - 1px),
+    rgba(0, 80, 255, 0.05) var(--sp-1)
   );
+}
+
+/* 12-column vertical grid — full viewport */
+body.debug::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9998;
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgba(0, 80, 255, 0.12) 0,
+    rgba(0, 80, 255, 0.12) 1px,
+    transparent 1px,
+    transparent calc(100vw / 12)
+  );
+  background-size: calc(100vw / 12) 100%;
 }
 
 /* Container boundary — blue */
 body.debug .wrap {
-  outline: 1px solid rgba(0, 80, 255, 0.5);
+  outline: 1px solid rgba(0, 80, 255, 0.4);
 }
 
-/* Sections and intro — green */
+/* Sections — green */
 body.debug .site-header,
 body.debug .intro,
 body.debug .section,
 body.debug .site-footer {
-  outline: 1px solid rgba(0, 180, 60, 0.55);
+  outline: 1px solid rgba(0, 180, 60, 0.45);
 }
 
 /* Grids and lists — orange dashed */
-body.debug .intro-grid,
 body.debug .research-list,
 body.debug .pub-list,
 body.debug .pub,
 body.debug .ext-links {
-  outline: 1px dashed rgba(255, 120, 0, 0.65);
+  outline: 1px dashed rgba(255, 120, 0, 0.6);
 }
 
 /* Text nodes — purple */
@@ -38,8 +54,12 @@ body.debug h1,
 body.debug h2,
 body.debug h3,
 body.debug p {
-  outline: 1px solid rgba(160, 0, 200, 0.25);
+  outline: 1px solid rgba(160, 0, 200, 0.2);
 }
+
+/* Deco blocks */
+body.debug .intro-deco-a { outline: 1px dashed rgba(255, 120, 0, 0.5); }
+body.debug .intro-deco-b { outline: 1px dashed rgba(255, 120, 0, 0.5); }
 
 /* Photo */
 body.debug .intro-photo img {
@@ -49,7 +69,7 @@ body.debug .intro-photo img {
 
 /* Label in corner */
 body.debug::before {
-  content: "DEBUG";
+  content: "GRID";
   position: fixed;
   bottom: 1rem;
   right: 1rem;
@@ -57,7 +77,7 @@ body.debug::before {
   font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.12em;
-  color: rgba(220, 0, 0, 0.6);
+  color: rgba(0, 80, 255, 0.5);
   pointer-events: none;
   z-index: 9999;
 }

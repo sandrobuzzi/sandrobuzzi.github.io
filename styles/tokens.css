@@ -26,6 +26,11 @@
   --size-xl:      1.5rem;   /*  24px — reserved             */
   --size-display: clamp(2.5rem, 4.5vw, 3.5rem); /* name    */
 
+  /* Decorative blocks */
+  --deco-a: #c4a898;   /* large warm block */
+  --deco-b: #d8ccc4;   /* thin vertical strip */
+
   /* Layout */
   --container: 900px;
+  --col-gap: 24px;
 }

@@ -38,9 +38,9 @@ h3 {
 h1 {
   font-family: "Manrope", sans-serif;
   font-weight: 800;
-  font-size: clamp(2.5rem, 4vw, 3.5rem);
-  line-height: 1.05;
-  letter-spacing: -0.03em;
+  font-size: clamp(3rem, 7.5vw, 7rem);
+  line-height: 0.92;
+  letter-spacing: -0.035em;
 }
 
 h2 {
