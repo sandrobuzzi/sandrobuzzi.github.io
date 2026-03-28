@@ -23,6 +23,11 @@
 
   --gap:  24px;
   --cell: calc((100vw - 13 * var(--gap)) / 14);
+
+  /* ── Hero type sizes — edit here ── */
+  --name-size:     clamp(2rem, 5.2vw, 5.2rem);
+  --subtitle-size: 2rem;
+  --bio-size:      1.75rem;
 }
 
 /* ─── Header items (row 1) ───────────────────────────────────────────────── */
@@ -46,129 +51,94 @@
   z-index: 2;
 }
 
-/* ─── Row markers (rows 1 and 9 — the 1fr rows) ─────────────────────────── */
+/* ─── Row + col markers: hidden by default, shown via .debug ─────────────── */
 
 .row-marker {
   grid-column: 1 / -1;
   justify-self: stretch;
-
-  border-top:    1px solid rgba(0, 80, 255, 0.25);
-  border-bottom: 1px solid rgba(0, 80, 255, 0.14);
-
   pointer-events: none;
   z-index: 1;
+  display: none;
 }
-
-/* ─── Column markers ─────────────────────────────────────────────────────────
-   14 markers, each spanning all 9 rows.
-─────────────────────────────────────────────────────────────────────────── */
 
 .col-marker {
   grid-row: 1 / -1;
   align-self: stretch;
-
-  border-left:  1px solid rgba(0, 80, 255, 0.25);
-  border-right: 1px solid rgba(0, 80, 255, 0.14);
-
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  padding-top: 5px;
-  font-size: 8px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  color: rgba(0, 80, 255, 0.38);
   user-select: none;
   pointer-events: none;
+  display: none;
 }
 
-.col-marker:last-of-type {
-  border-right: 1px solid rgba(0, 80, 255, 0.25);
-}
-
-/* ─── Row cell boxes + row gutters ───────────────────────────────────────── */
+/* ─── Row cell gradient: hidden by default ───────────────────────────────── */
 
 .hero::before {
   content: "";
   grid-column: 1 / -1;
-  grid-row: 2 / -1;  /* extend past row 8 so the last bottom-border isn't clipped */
+  grid-row: 2 / -1;
   pointer-events: none;
   z-index: 1;
-
-  background-image: repeating-linear-gradient(
-    to bottom,
-    rgba(0, 80, 255, 0.22) 0,
-    rgba(0, 80, 255, 0.22) 1px,                             /* top of row cell */
-    transparent             1px,
-    transparent             var(--cell),                     /* row cell interior */
-    rgba(0, 80, 255, 0.14) var(--cell),
-    rgba(0, 80, 255, 0.14) calc(var(--cell) + 1px),         /* bottom of row cell */
-    transparent             calc(var(--cell) + 1px),
-    transparent             calc(var(--cell) + var(--gap))   /* row gutter */
-  );
 }
 
-/* ─── Element snap indicators ────────────────────────────────────────────── */
+/* ─── Name: cols 3–6 (4 blocks), Alessandro row 3 bottom / Buzzi row 4 top ─ */
 
-.hero-name     { outline: 1px dashed rgba(255, 80,   0, 0.55); }
-.hero-subtitle { outline: 1px dashed rgba(  0, 160,  80, 0.55); }
-.hero-bio      { outline: 1px dashed rgba(160,   0, 200, 0.55); }
-.hero-photo    { outline: 1px dashed rgba(  0, 160, 200, 0.55); }
+.hero-first,
+.hero-last {
+  grid-column: 3 / 7;
+  position: relative;
+  z-index: 2;
+  padding: 0;
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: var(--name-size);
+  line-height: 1;
+  letter-spacing: 0;
+  color: var(--text);
+  text-box: trim-both cap alphabetic;
+}
 
-/* ─── Name: cols 3–7, rows 3–4 ──────────────────────────────────────────── */
+.hero-first { grid-row: 3 / 4; align-self: end;   }
+.hero-last  { grid-row: 4 / 5; align-self: start; }
 
-.hero-name {
-  grid-column: 3 / 8;
-  grid-row: 3 / 5;
+/* ─── Subtitle: 3 blocks (cols 3–5), row 5, top-aligned ─────────────────── */
+
+.hero-subtitle {
+  grid-column: 3 / 6;
+  grid-row: 5 / 6;
   align-self: start;
   position: relative;
   z-index: 2;
-}
-
-.hero-name h1 {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 700;
-  font-size: clamp(2rem, 5.5vw, 5.5rem);
-  line-height: 1.0;
-  letter-spacing: 0;
-  color: var(--text);
-  margin: 0;
-  margin-top: calc(1cap - 1em);
-}
-
-/* ─── Subtitle: row 5, bottom at photo vertical center ─────────────────── */
-
-.hero-subtitle {
-  grid-column: 3 / 8;
-  grid-row: 5 / 6;
-  align-self: end;
-  position: relative;
-  z-index: 2;
 
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 1.75rem;
-  font-weight: 300;
+  font-size: var(--subtitle-size);
+  font-weight: 400;
+  line-height: 1;
   color: var(--accent);
   letter-spacing: 0;
   margin: 0;
-  margin-bottom: calc(var(--cell) / 2);
+  text-box: trim-both cap alphabetic;
 }
 
-/* ─── Bio: cols 3–7, bottom-aligned with photo ──────────────────────────── */
+/* ─── Bio: 3 cols × 2 rows (cols 3–5, rows 6–7), bottom-left aligned ─────── */
+
+.hero-bio strong {
+  font-weight: 600;
+}
 
 .hero-bio {
-  grid-column: 3 / 8;
-  grid-row: 3 / 8;
+  grid-column: 3 / 6;
+  grid-row: 6 / 8;
   align-self: end;
   position: relative;
   z-index: 2;
 
-  font-family: "Times New Roman", Times, serif;
-  font-size: 1.6rem;
-  line-height: 1.2;
+  font-family: "helvetica", Times, serif;
+  font-weight: 300;
+  font-size: var(--bio-size);
+  line-height: 1.35;
   color: var(--text);
   margin: 0;
-  max-width: calc(3 * var(--cell) + 2 * var(--gap));
+  overflow: hidden;
 }
 
 /* ─── Photo: cols 8–12, rows 3–7 ───────────────────────────────────────── */
@@ -176,9 +146,29 @@
 .hero-photo {
   grid-column: 8 / 13;
   grid-row: 3 / 8;
-  align-self: center;
+  align-self: stretch;
   position: relative;
   z-index: 2;
+}
+
+/* ─── Decorative elements ────────────────────────────────────────────────── */
+
+.hero-deco {
+  grid-column: 7 / 13;
+  grid-row: 6 / 8;
+  z-index: 1;
+  background: var(--accent);
+}
+
+.hero-deco-sq {
+  grid-column: 8 / 13;
+  grid-row: 3 / 8;
+  justify-self: end;
+  align-self: end;
+  width:  calc((5 * var(--cell) + 4 * var(--gap)) / 2);
+  height: calc((5 * var(--cell) + 4 * var(--gap)) / 2);
+  z-index: 1;
+  background: var(--accent);
 }
 
 .hero-photo img {
