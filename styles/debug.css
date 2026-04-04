@@ -28,9 +28,10 @@ body.debug .row-marker {
   border-bottom: 1px solid rgba(0, 80, 255, 0.14);
 }
 
-/* ─── Hero grid: row cell boxes + gutters ────────────────────────────────── */
+/* ─── Grid: row cell boxes + gutters (hero + all sections) ──────────────── */
 
-body.debug .hero::before {
+body.debug .hero::before,
+body.debug .section::before {
   background-image: repeating-linear-gradient(
     to bottom,
     rgba(0, 80, 255, 0.22) 0,

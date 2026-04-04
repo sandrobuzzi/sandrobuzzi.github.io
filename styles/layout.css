@@ -79,6 +79,14 @@
   scroll-snap-stop: always;
 }
 
+.section::before {
+  content: "";
+  grid-column: 1 / -1;
+  grid-row: 2 / -1;
+  pointer-events: none;
+  z-index: 1;
+}
+
 /* ─── Section label (h2) — col 3, row 1, aligned to separator line ───────── */
 
 .section-label {

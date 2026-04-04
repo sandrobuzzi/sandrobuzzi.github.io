@@ -304,9 +304,31 @@
     </div>
 
     <script>
-      // Debug overlay
+      // Debug overlay — inject col/row markers into each section on first toggle
+      function injectDebugMarkers(el) {
+        if (el.querySelector('.col-marker')) return;
+        for (let i = 1; i <= 14; i++) {
+          const col = document.createElement('div');
+          col.className = 'col-marker';
+          col.style.gridColumn = i;
+          col.textContent = i;
+          el.appendChild(col);
+        }
+        [1, 9].forEach(function(row) {
+          const marker = document.createElement('div');
+          marker.className = 'row-marker';
+          marker.style.gridRow = row;
+          el.appendChild(marker);
+        });
+      }
+
       document.addEventListener("keydown", function (e) {
-        if (e.key === "d") document.body.classList.toggle("debug");
+        if (e.key === "d") {
+          document.body.classList.toggle("debug");
+          if (document.body.classList.contains("debug")) {
+            document.querySelectorAll('.section').forEach(injectDebugMarkers);
+          }
+        }
       });
 
       // Fixed nav: visible once hero scrolls out
