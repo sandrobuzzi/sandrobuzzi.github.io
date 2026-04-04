@@ -75,6 +75,8 @@
   grid-template-rows: 1fr repeat(7, var(--cell)) 1fr;
   gap: var(--gap);
   position: relative;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 /* ─── Section label (h2) — col 3, row 1, aligned to separator line ───────── */
@@ -104,7 +106,17 @@
   z-index: 2;
 }
 
-/* ─── Research section ───────────────────────────────────────────────────── */
+/* ─── RESEARCH ──────────────────────────────────────────────────────────────
+   Grid: 14 cols × 9 rows  (inherits .section)
+   Active content zone: cols 3–12, rows 2–8
+
+   Col  3        Row 1          section label        (.section-label)
+   Col  3–12     Row 2 (top)    rule                 (.section-rule)
+   Col  3–5      Row 3–8        article 1            (.research-item:1)
+   Col  6–8      Row 3–8        article 2            (.research-item:2)
+   Col  9–11     Row 3–8        article 3            (.research-item:3)
+   Col  7–8      Row 9          scroll arrow         (.scroll-arrow)
+─────────────────────────────────────────────────────────────────────────── */
 
 #research article:first-of-type  {
   grid-column: 3 / 6;
@@ -124,7 +136,16 @@
   z-index: 2;
 }
 
-/* ─── Publications section ───────────────────────────────────────────────── */
+/* ─── PUBLICATIONS ───────────────────────────────────────────────────────────
+   Grid: 14 cols × 9 rows  (inherits .section)
+   Active content zone: cols 3–12, rows 2–8
+
+   Col  3        Row 1          section label        (.section-label)
+   Col  3–12     Row 2 (top)    rule                 (.section-rule)
+   Col  3–12     Row 3–8        pub list             (.pub-list)
+                                  internal: 2 cols × 4 rows, column-flow
+   Col  7–8      Row 9          scroll arrow         (.scroll-arrow)
+─────────────────────────────────────────────────────────────────────────── */
 
 #publications .pub-list {
   grid-column: 3 / 13;
@@ -138,57 +159,60 @@
   z-index: 2;
 }
 
-/* ─── Contact section ────────────────────────────────────────────────────── */
+/* ─── CONTACT ────────────────────────────────────────────────────────────────
+   Grid: 14 cols × 9 rows  (inherits .section)
+   Active content zone: cols 3–12, rows 2–8
+   Last slide — no scroll arrow.
+
+   Col  3        Row 1          section label        (.section-label)
+   Col  3–12     Row 2 (top)    rule                 (.section-rule)
+   Col  3–6      Row 3–5        description text     (.contact-desc)
+   Col  3–6      Row 6          external links       (.ext-links)
+   Col  8–12     Row 3–7        main warm block      (.contact-deco)
+   Col  7–12     Row 6–7        terracotta strip     (.contact-deco-strip)
+   Col  3–6      Row 9          site credit          (.site-credit)
+─────────────────────────────────────────────────────────────────────────── */
 
 #contact .contact-desc {
-  grid-column: 3 / 8;
-  grid-row: 3;
-  align-self: end;
+  grid-column: 3 / 7;
+  grid-row: 3 / 6;
+  align-self: start;
   color: var(--muted);
   z-index: 2;
 }
 
 #contact .ext-links {
-  grid-column: 3 / 8;
-  grid-row: 4;
+  grid-column: 3 / 7;
+  grid-row: 6;
   align-self: start;
   margin-top: 0;
   z-index: 2;
 }
 
+/* Main warm block — mirrors hero-photo area */
 #contact .contact-deco {
-  grid-column: 9 / 13;
-  grid-row: 3 / 9;
+  grid-column: 8 / 13;
+  grid-row: 3 / 8;
   background: var(--deco-a);
   z-index: 1;
 }
 
-/* ─── Footer ─────────────────────────────────────────────────────────────── */
-
-.site-footer {
-  display: grid;
-  grid-template-columns: repeat(14, var(--cell));
-  column-gap: var(--gap);
-  padding-top:    var(--sp-4);
-  padding-bottom: var(--sp-4);
-  position: relative;
+/* Terracotta accent strip — mirrors hero-deco */
+#contact .contact-deco-strip {
+  grid-column: 7 / 13;
+  grid-row: 6 / 8;
+  background: var(--accent);
+  z-index: 1;
 }
 
-.site-footer::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left:  calc(2 * (var(--cell) + var(--gap)));
-  right: calc(2 * (var(--cell) + var(--gap)));
-  height: 1px;
-  background: var(--line);
-}
-
-.site-footer .footer-text {
-  grid-column: 3 / 9;
+/* Site credit (replaces standalone footer) */
+#contact .site-credit {
+  grid-column: 3 / 7;
+  grid-row: 9;
+  align-self: center;
   font-size: var(--size-xs);
   color: var(--muted);
-  align-self: center;
+  z-index: 2;
 }
 
 /* ─── Nav shared styles ──────────────────────────────────────────────────── */
@@ -220,11 +244,8 @@
   }
 
   #contact .contact-desc,
-  #contact .ext-links {
-    grid-column: 2 / 14;
-  }
-
-  .site-footer .footer-text {
+  #contact .ext-links,
+  #contact .site-credit {
     grid-column: 2 / 14;
   }
 }

@@ -1,15 +1,22 @@
-/* ─── Hero grid scaffold ──────────────────────────────────────────────────────
-   14 cols × 9 rows, gap 24px. Grid fills 100vw × 100svh exactly.
+/* ─── HERO ────────────────────────────────────────────────────────────────────
+   Grid: 14 cols × 9 rows, gap 24px. Fills 100vw × 100svh exactly.
 
-   All 14 cols: var(--cell) = (100vw − 13×gap) / 14  → equal-width columns
-   Rows 2–8 (7 rows): var(--cell)  → square cells (col width = row height)
-   Rows 1, 9: 1fr  → absorb remaining vertical space symmetrically
+   Grid math (1440 × 900 reference):
+     cell        = (1440 − 13×24) / 14  = 80.6 px  (square ✓)
+     7 sq rows   = 7×80.6 + 6×24        = 708 px
+     1fr each    = (900 − 708 − 8×24)/2 = 72 px
 
-   At 1440 × 900:
-     cell        = (1440 − 13×24) / 14      = 80.6 px  (square ✓)
-     7 sq rows   = 7×80.6 + 6×24            = 708 px
-     1fr each    = (900 − 708 − 8×24) / 2   = 72 px
-     total width = 14×80.6 + 13×24          = 1440 px  (fills viewport ✓)
+   Col  3        Row 1          logo              (.site-name)
+   Col  9–12     Row 1          navigation        (.site-nav)
+   Col  3–12     Row 2 (top)    rule              (.hero-rule)
+   Col  3–6      Row 3          name "Alessandro" (.hero-first)
+   Col  3–6      Row 4          name "Buzzi"      (.hero-last)
+   Col  3–5      Row 5          subtitle          (.hero-subtitle)
+   Col  3–5      Row 6–7        bio text          (.hero-bio)
+   Col  8–12     Row 3–7        headshot photo    (.hero-photo)
+   Col  7–12     Row 6–7        deco block        (.hero-deco)
+   Col  8–12     Row 3–7 (br)   half deco square  (.hero-deco-sq)
+   Col  7–8      Row 9          scroll arrow      (.scroll-arrow)
 ─────────────────────────────────────────────────────────────────────────── */
 
 .hero {
@@ -20,6 +27,9 @@
   grid-template-columns: repeat(14, var(--cell));
   grid-template-rows: 1fr repeat(7, var(--cell)) 1fr;
   gap: var(--gap);
+
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 
   /* ── Hero type sizes — edit here ── */
   --name-size:     clamp(2rem, 5.2vw, 5.2rem);

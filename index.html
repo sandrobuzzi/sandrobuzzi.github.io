@@ -37,7 +37,20 @@
         </nav>
       </header>
 
-      <!-- ── Hero ───────────────────────────────────────────────── -->
+      <!-- ── HERO ────────────────────────────────────────────────────────────
+           Grid: 14 cols × 9 rows
+           Col  3        Row 1          logo              (.site-name)
+           Col  9–12     Row 1          navigation        (.site-nav)
+           Col  3–12     Row 2 (top)    rule              (.hero-rule)
+           Col  3–6      Row 3          name "Alessandro" (.hero-first)
+           Col  3–6      Row 4          name "Buzzi"      (.hero-last)
+           Col  3–5      Row 5          subtitle          (.hero-subtitle)
+           Col  3–5      Row 6–7        bio               (.hero-bio)
+           Col  8–12     Row 3–7        photo             (.hero-photo)
+           Col  7–12     Row 6–7        deco block        (.hero-deco)
+           Col  8–12     Row 3–7 (br)   half deco sq      (.hero-deco-sq)
+           Col  7–8      Row 9          scroll arrow      (.scroll-arrow)
+      ──────────────────────────────────────────────────────────────────── -->
       <section class="hero" id="about">
 
         <a class="site-name" href="#top">
@@ -89,7 +102,15 @@
 
       </section>
 
-      <!-- ── Research ────────────────────────────────────────────── -->
+      <!-- ── RESEARCH ────────────────────────────────────────────────────────
+           Grid: 14 cols × 9 rows
+           Col  3        Row 1          label             (.section-label)
+           Col  3–12     Row 2 (top)    rule              (.section-rule)
+           Col  3–5      Row 3–8        article 1         (.research-item)
+           Col  6–8      Row 3–8        article 2         (.research-item)
+           Col  9–11     Row 3–8        article 3         (.research-item)
+           Col  7–8      Row 9          scroll arrow      (.scroll-arrow)
+      ──────────────────────────────────────────────────────────────────── -->
       <section class="section" id="research">
         <h2 class="section-label">Research</h2>
         <div class="section-rule"></div>
@@ -116,7 +137,14 @@
         </a>
       </section>
 
-      <!-- ── Publications ────────────────────────────────────────── -->
+      <!-- ── PUBLICATIONS ────────────────────────────────────────────────────
+           Grid: 14 cols × 9 rows
+           Col  3        Row 1          label             (.section-label)
+           Col  3–12     Row 2 (top)    rule              (.section-rule)
+           Col  3–12     Row 3–8        pub list          (.pub-list)
+                                          2-col × 4-row internal grid
+           Col  7–8      Row 9          scroll arrow      (.scroll-arrow)
+      ──────────────────────────────────────────────────────────────────── -->
       <section class="section" id="publications">
         <h2 class="section-label">Publications</h2>
         <div class="section-rule"></div>
@@ -237,28 +265,41 @@
         </a>
       </section>
 
-      <!-- ── Contact ─────────────────────────────────────────────── -->
+      <!-- ── CONTACT ──────────────────────────────────────────────────────────
+           Grid: 14 cols × 9 rows  (last slide — no scroll arrow)
+           Col  3        Row 1          label             (.section-label)
+           Col  3–12     Row 2 (top)    rule              (.section-rule)
+           Col  3–6      Row 3–5        description       (.contact-desc)
+           Col  3–6      Row 6          links             (.ext-links)
+           Col  8–12     Row 3–7        warm deco block   (.contact-deco)
+           Col  7–12     Row 6–7        accent strip      (.contact-deco-strip)
+           Col  3–6      Row 9          site credit       (.site-credit)
+      ──────────────────────────────────────────────────────────────────── -->
       <section class="section" id="contact">
         <h2 class="section-label">Contact</h2>
         <div class="section-rule"></div>
 
+        <!-- Col 3–6, rows 3–5: description text -->
         <p class="contact-desc">
           The clearest public references are Google Scholar and LinkedIn.
           More material is in progress.
         </p>
+
+        <!-- Col 3–6, row 6: links -->
         <div class="ext-links">
           <a href="https://scholar.google.com/citations?user=tsQM3hoAAAAJ" target="_blank" rel="noreferrer">Google Scholar</a>
           <a href="https://www.linkedin.com/in/alessandro-buzzi-373a35289/" target="_blank" rel="noreferrer">LinkedIn</a>
         </div>
 
-        <!-- Decorative placeholder (right side) -->
+        <!-- Col 8–12, rows 3–7: warm deco block (mirrors hero-photo area) -->
         <div class="contact-deco"></div>
-      </section>
 
-      <!-- ── Footer ─────────────────────────────────────────────── -->
-      <footer class="site-footer">
-        <span class="footer-text">Alessandro Buzzi &middot; Cambridge, Massachusetts</span>
-      </footer>
+        <!-- Col 7–12, rows 6–7: terracotta accent strip (mirrors hero-deco) -->
+        <div class="contact-deco-strip"></div>
+
+        <!-- Col 3–6, row 9: site credit (replaces standalone footer) -->
+        <p class="site-credit">Alessandro Buzzi &middot; Cambridge, Massachusetts</p>
+      </section>
 
     </div>
 

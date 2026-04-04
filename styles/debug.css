@@ -72,8 +72,7 @@ body.debug .wrap {
 
 /* ─── Sections — green ───────────────────────────────────────────────────── */
 
-body.debug .section,
-body.debug .site-footer {
+body.debug .section {
   outline: 1px solid rgba(0, 180, 60, 0.45);
 }
 
