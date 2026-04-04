@@ -1,62 +1,34 @@
-/* External link row */
-
-.ext-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--sp-3);
-  margin-top: var(--sp-3);
-}
-
-.ext-links a {
-  font-size: var(--size-sm);
-  font-weight: 700;
-  color: var(--accent);
-  letter-spacing: 0.01em;
-  border-bottom: 1px solid var(--accent-line);
-  transition: border-color 140ms ease;
-}
-
-.ext-links a:hover {
-  border-color: var(--accent);
-}
-
-/* Research list */
-
-.research-list {
-  display: grid;
-  gap: 0;
-}
+/* ─── Research cards ─────────────────────────────────────────────────────── */
 
 .research-item {
-  padding: var(--sp-4) 0;
-  border-top: 1px solid var(--line);
-}
-
-.research-item:last-child {
-  border-bottom: 1px solid var(--line);
+  padding-top: calc(var(--gap) * 0.75);
+  border-top: 1.5px solid var(--accent);
 }
 
 .research-item h3 {
   margin-bottom: var(--sp-2);
+  font-size: var(--size-base);
+  font-weight: 600;
+  line-height: 1.4;
 }
 
 .research-item p {
-  font-size: var(--size-base);
+  font-size: var(--size-sm);
   color: var(--muted);
-  max-width: 58ch;
+  line-height: 1.6;
 }
 
-/* Publication list */
+/* ─── Publication list ───────────────────────────────────────────────────── */
 
 .pub-list {
   display: grid;
-  gap: var(--sp-5);
+  gap: calc(var(--gap) * 1.5);
 }
 
 .pub {
   display: grid;
-  grid-template-columns: 3rem 1fr;
-  gap: 0 var(--sp-3);
+  grid-template-columns: calc(var(--cell)) 1fr;
+  gap: var(--gap);
 }
 
 .pub-year {
@@ -99,17 +71,33 @@
   color: var(--muted);
 }
 
-.pub-venue a {
+.pub-venue em {
+  font-style: italic;
+}
+
+/* ─── External links ─────────────────────────────────────────────────────── */
+
+.ext-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+  margin-top: var(--sp-3);
+}
+
+.ext-links a {
+  font-size: var(--size-sm);
+  font-weight: 700;
   color: var(--accent);
+  letter-spacing: 0.01em;
   border-bottom: 1px solid var(--accent-line);
   transition: border-color 140ms ease;
 }
 
-.pub-venue a:hover {
+.ext-links a:hover {
   border-color: var(--accent);
 }
 
-/* Responsive */
+/* ─── Responsive ─────────────────────────────────────────────────────────── */
 
 @media (max-width: 480px) {
   .pub {

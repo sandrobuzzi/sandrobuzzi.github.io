@@ -22,14 +22,24 @@
     <link rel="stylesheet" href="styles/debug.css" />
   </head>
   <body>
-
-    <!-- ── Page wrapper ─────────────────────────────────────── -->
     <div class="page">
 
-      <!-- ── Hero (full viewport, header inside grid) ───────────── -->
+      <!-- ── Fixed nav (appears after hero scrolls out) ─────────── -->
+      <header class="fixed-nav">
+        <a class="site-name" href="#about">
+          <img src="graphics/Logo.svg" alt="Sandro Buzzi" class="site-logo" />
+        </a>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="#about">About</a>
+          <a href="#research">Research</a>
+          <a href="#publications">Publications</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
+
+      <!-- ── Hero ───────────────────────────────────────────────── -->
       <section class="hero" id="about">
 
-        <!-- Header: row 1 -->
         <a class="site-name" href="#top">
           <img src="graphics/Logo.svg" alt="Sandro Buzzi" class="site-logo" />
         </a>
@@ -40,14 +50,11 @@
           <a href="#contact">Contact</a>
         </nav>
 
-        <!-- Separation line at top of row 2 -->
         <div class="hero-rule"></div>
 
-        <!-- Row markers for the 1fr rows (visible in grid mode) -->
+        <!-- Debug markers -->
         <div class="row-marker" style="grid-row:1"></div>
         <div class="row-marker" style="grid-row:9"></div>
-
-        <!-- 14 column markers (visible in grid mode) -->
         <div class="col-marker" style="grid-column:1">1</div>
         <div class="col-marker" style="grid-column:2">2</div>
         <div class="col-marker" style="grid-column:3">3</div>
@@ -63,206 +70,216 @@
         <div class="col-marker" style="grid-column:13">13</div>
         <div class="col-marker" style="grid-column:14">14</div>
 
-        <!-- Name: cols 3–6 (4 blocks), rows 3–4, Alessandro bottom / Buzzi top -->
         <div class="hero-first">Alessandro</div>
         <div class="hero-last">Buzzi</div>
-
-        <!-- Subtitle: row 5, sits just below name -->
         <p class="hero-subtitle">PhD Candidate &thinsp;&middot;&thinsp; MIT</p>
-
-        <!-- Bio: cols 2–5, bottom-aligned with photo -->
         <p class="hero-bio">I design, fabricate, and control <strong>integrated photonic systems</strong> for computing and quantum technologies.</p>
 
-        <!-- Decorative rectangle: 6 cols × 2 rows, bottom-right of photo -->
         <div class="hero-deco"></div>
-
-        <!-- Decorative square: 3×3 blocks, bottom-right of photo -->
         <div class="hero-deco-sq"></div>
-
-        <!-- Photo: cols 7–11, vertically centered -->
         <div class="hero-photo">
-          <img
-            src="headshot/headshot.png"
-            alt="Alessandro Buzzi"
-            loading="eager"
-          />
+          <img src="headshot/headshot.png" alt="Alessandro Buzzi" loading="eager" />
         </div>
+
+        <a href="#research" class="scroll-arrow" aria-label="Scroll to Research">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </a>
 
       </section>
 
-      <!-- ── Rest of page (scrollable, unchanged) ─────────────── -->
-      <div class="wrap">
-        <main>
-          <section class="section" id="research">
-            <h2 class="section-label">Research</h2>
-            <ul class="research-list">
-              <li class="research-item">
-                <h3>Quantum photonics and color centers</h3>
-                <p>
-                  MEMS-based spectral tuning and nanoscale localization of silicon
-                  color centers. Foundry-compatible integration of diamond quantum
-                  microchiplets for scalable quantum photonic systems.
-                </p>
-              </li>
-              <li class="research-item">
-                <h3>Heterogeneous photonic integration</h3>
-                <p>
-                  Micro-transfer printing of lasers, gain media, nonlinear
-                  materials, and detectors onto photonic platforms for
-                  heterogeneous integration of active devices.
-                </p>
-              </li>
-              <li class="research-item">
-                <h3>AI-driven characterization and control</h3>
-                <p>
-                  Machine learning and automation workflows for photonic crystal
-                  cavity analysis, process-parameter extraction, and large-scale
-                  optimization of optical interconnects and photonic computing
-                  devices.
-                </p>
-              </li>
-            </ul>
-          </section>
+      <!-- ── Research ────────────────────────────────────────────── -->
+      <section class="section" id="research">
+        <h2 class="section-label">Research</h2>
+        <div class="section-rule"></div>
 
-          <section class="section" id="publications">
-            <h2 class="section-label">Publications</h2>
-            <ol class="pub-list">
-              <li class="pub">
-                <span class="pub-year">2026</span>
-                <div>
-                  <p class="pub-title">
-                    <a href="https://arxiv.org/abs/2601.20025" target="_blank" rel="noreferrer"
-                      >Foundry-Enabled Patterning of Diamond Quantum Microchiplets
-                      for Scalable Quantum Photonics</a>
-                  </p>
-                  <p class="pub-authors">
-                    <span class="self">A. Buzzi</span>, J. Almutlaq, A. Khaykin,
-                    L. Li, W. Yzaguirre, M. Sirotin, G. Gilbert, G. Clark, D. Englund
-                  </p>
-                  <p class="pub-venue">arXiv preprint</p>
-                </div>
-              </li>
-              <li class="pub">
-                <span class="pub-year">2025</span>
-                <div>
-                  <p class="pub-title">
-                    <a href="https://doi.org/10.1038/s41467-025-63871-8" target="_blank" rel="noreferrer"
-                      >Spectral tuning and nanoscale localization of single color
-                      centers in silicon via controllable strain</a>
-                  </p>
-                  <p class="pub-authors">
-                    <span class="self">A. Buzzi</span>, C. Papon, M. Pirro,
-                    O. Hooybergs, H. Raniwala, V. Saggio, C. Errando-Herranz, D. Englund
-                  </p>
-                  <p class="pub-venue"><em>Nature Communications</em> 16, 8829</p>
-                </div>
-              </li>
-              <li class="pub">
-                <span class="pub-year">2025</span>
-                <div>
-                  <p class="pub-title">
-                    <a href="https://doi.org/10.1038/s41928-025-01376-4" target="_blank" rel="noreferrer"
-                      >A superconducting full-wave bridge rectifier</a>
-                  </p>
-                  <p class="pub-authors">
-                    M. Castellani, O. Medeiros,
-                    <span class="self">A. Buzzi</span>, R. A. Foster,
-                    M. Colangelo, K. K. Berggren
-                  </p>
-                  <p class="pub-venue"><em>Nature Electronics</em> 8, 417&ndash;425</p>
-                </div>
-              </li>
-              <li class="pub">
-                <span class="pub-year">2025</span>
-                <div>
-                  <p class="pub-title">
-                    <a href="https://arxiv.org/abs/2501.17240" target="_blank" rel="noreferrer"
-                      >End-to-end physics-based modeling of laser-activated color
-                      centers in silicon</a>
-                  </p>
-                  <p class="pub-authors">
-                    Q. Gu, V. Saggio, C. Papon,
-                    <span class="self">A. Buzzi</span>, I. Christen, C. Panuski,
-                    C. Errando-Herranz, D. Englund
-                  </p>
-                  <p class="pub-venue">arXiv preprint</p>
-                </div>
-              </li>
-              <li class="pub">
-                <span class="pub-year">2024</span>
-                <div>
-                  <p class="pub-title">
-                    <a href="https://doi.org/10.1103/PhysRevApplied.22.024020" target="_blank" rel="noreferrer"
-                      >Nanocryotron ripple counter integrated with a
-                      superconducting nanowire single-photon detector for megapixel arrays</a>
-                  </p>
-                  <p class="pub-authors">
-                    M. Castellani, O. Medeiros, R. A. Foster,
-                    <span class="self">A. Buzzi</span>, M. Colangelo,
-                    J. C. Bienfang, A. Restelli, K. K. Berggren
-                  </p>
-                  <p class="pub-venue"><em>Physical Review Applied</em> 22, 024020</p>
-                </div>
-              </li>
-              <li class="pub">
-                <span class="pub-year">2023</span>
-                <div>
-                  <p class="pub-title">
-                    <a href="https://doi.org/10.1063/5.0144686" target="_blank" rel="noreferrer"
-                      >A nanocryotron memory and logic family</a>
-                  </p>
-                  <p class="pub-authors">
-                    <span class="self">A. Buzzi</span>, M. Castellani,
-                    R. A. Foster, O. Medeiros, M. Colangelo, K. K. Berggren
-                  </p>
-                  <p class="pub-venue"><em>Applied Physics Letters</em> 122, 142601</p>
-                </div>
-              </li>
-              <li class="pub">
-                <span class="pub-year">2023</span>
-                <div>
-                  <p class="pub-title">
-                    <a href="https://doi.org/10.1063/5.0144685" target="_blank" rel="noreferrer"
-                      >A superconducting nanowire binary shift register</a>
-                  </p>
-                  <p class="pub-authors">
-                    R. A. Foster, M. Castellani,
-                    <span class="self">A. Buzzi</span>, O. Medeiros,
-                    M. Colangelo, K. K. Berggren
-                  </p>
-                  <p class="pub-venue"><em>Applied Physics Letters</em> 122, 152601</p>
-                </div>
-              </li>
-            </ol>
-          </section>
+        <article class="research-item">
+          <h3>Quantum photonics &amp; color centers</h3>
+          <p>MEMS-based spectral tuning and nanoscale localization of silicon color centers. Foundry-compatible integration of diamond quantum microchiplets for scalable quantum photonic systems.</p>
+        </article>
 
-          <section class="section" id="contact">
-            <h2 class="section-label">Contact</h2>
-            <p style="color: var(--muted); max-width: 44ch">
-              The clearest public references are Google Scholar and LinkedIn.
-              More material is in progress.
-            </p>
-            <div class="ext-links">
-              <a href="https://scholar.google.com/citations?user=tsQM3hoAAAAJ" target="_blank" rel="noreferrer">Google Scholar</a>
-              <a href="https://www.linkedin.com/in/alessandro-buzzi-373a35289/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <article class="research-item">
+          <h3>Heterogeneous photonic integration</h3>
+          <p>Micro-transfer printing of lasers, gain media, nonlinear materials, and detectors onto photonic platforms for heterogeneous integration of active devices.</p>
+        </article>
+
+        <article class="research-item">
+          <h3>AI-driven characterization &amp; control</h3>
+          <p>Machine learning and automation workflows for photonic crystal cavity analysis, process-parameter extraction, and large-scale optimization of optical interconnects and photonic computing devices.</p>
+        </article>
+
+        <a href="#publications" class="scroll-arrow" aria-label="Scroll to Publications">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </a>
+      </section>
+
+      <!-- ── Publications ────────────────────────────────────────── -->
+      <section class="section" id="publications">
+        <h2 class="section-label">Publications</h2>
+        <div class="section-rule"></div>
+
+        <ol class="pub-list">
+          <li class="pub">
+            <span class="pub-year">2026</span>
+            <div>
+              <p class="pub-title">
+                <a href="https://arxiv.org/abs/2601.20025" target="_blank" rel="noreferrer"
+                  >Foundry-Enabled Patterning of Diamond Quantum Microchiplets
+                  for Scalable Quantum Photonics</a>
+              </p>
+              <p class="pub-authors">
+                <span class="self">A. Buzzi</span>, J. Almutlaq, A. Khaykin,
+                L. Li, W. Yzaguirre, M. Sirotin, G. Gilbert, G. Clark, D. Englund
+              </p>
+              <p class="pub-venue">arXiv preprint</p>
             </div>
-          </section>
-        </main>
+          </li>
+          <li class="pub">
+            <span class="pub-year">2025</span>
+            <div>
+              <p class="pub-title">
+                <a href="https://doi.org/10.1038/s41467-025-63871-8" target="_blank" rel="noreferrer"
+                  >Spectral tuning and nanoscale localization of single color
+                  centers in silicon via controllable strain</a>
+              </p>
+              <p class="pub-authors">
+                <span class="self">A. Buzzi</span>, C. Papon, M. Pirro,
+                O. Hooybergs, H. Raniwala, V. Saggio, C. Errando-Herranz, D. Englund
+              </p>
+              <p class="pub-venue"><em>Nature Communications</em> 16, 8829</p>
+            </div>
+          </li>
+          <li class="pub">
+            <span class="pub-year">2025</span>
+            <div>
+              <p class="pub-title">
+                <a href="https://doi.org/10.1038/s41928-025-01376-4" target="_blank" rel="noreferrer"
+                  >A superconducting full-wave bridge rectifier</a>
+              </p>
+              <p class="pub-authors">
+                M. Castellani, O. Medeiros,
+                <span class="self">A. Buzzi</span>, R. A. Foster,
+                M. Colangelo, K. K. Berggren
+              </p>
+              <p class="pub-venue"><em>Nature Electronics</em> 8, 417&ndash;425</p>
+            </div>
+          </li>
+          <li class="pub">
+            <span class="pub-year">2025</span>
+            <div>
+              <p class="pub-title">
+                <a href="https://arxiv.org/abs/2501.17240" target="_blank" rel="noreferrer"
+                  >End-to-end physics-based modeling of laser-activated color
+                  centers in silicon</a>
+              </p>
+              <p class="pub-authors">
+                Q. Gu, V. Saggio, C. Papon,
+                <span class="self">A. Buzzi</span>, I. Christen, C. Panuski,
+                C. Errando-Herranz, D. Englund
+              </p>
+              <p class="pub-venue">arXiv preprint</p>
+            </div>
+          </li>
+          <li class="pub">
+            <span class="pub-year">2024</span>
+            <div>
+              <p class="pub-title">
+                <a href="https://doi.org/10.1103/PhysRevApplied.22.024020" target="_blank" rel="noreferrer"
+                  >Nanocryotron ripple counter integrated with a
+                  superconducting nanowire single-photon detector for megapixel arrays</a>
+              </p>
+              <p class="pub-authors">
+                M. Castellani, O. Medeiros, R. A. Foster,
+                <span class="self">A. Buzzi</span>, M. Colangelo,
+                J. C. Bienfang, A. Restelli, K. K. Berggren
+              </p>
+              <p class="pub-venue"><em>Physical Review Applied</em> 22, 024020</p>
+            </div>
+          </li>
+          <li class="pub">
+            <span class="pub-year">2023</span>
+            <div>
+              <p class="pub-title">
+                <a href="https://doi.org/10.1063/5.0144686" target="_blank" rel="noreferrer"
+                  >A nanocryotron memory and logic family</a>
+              </p>
+              <p class="pub-authors">
+                <span class="self">A. Buzzi</span>, M. Castellani,
+                R. A. Foster, O. Medeiros, M. Colangelo, K. K. Berggren
+              </p>
+              <p class="pub-venue"><em>Applied Physics Letters</em> 122, 142601</p>
+            </div>
+          </li>
+          <li class="pub">
+            <span class="pub-year">2023</span>
+            <div>
+              <p class="pub-title">
+                <a href="https://doi.org/10.1063/5.0144685" target="_blank" rel="noreferrer"
+                  >A superconducting nanowire binary shift register</a>
+              </p>
+              <p class="pub-authors">
+                R. A. Foster, M. Castellani,
+                <span class="self">A. Buzzi</span>, O. Medeiros,
+                M. Colangelo, K. K. Berggren
+              </p>
+              <p class="pub-venue"><em>Applied Physics Letters</em> 122, 152601</p>
+            </div>
+          </li>
+        </ol>
 
-        <footer class="site-footer">
-          Alessandro Buzzi &middot; Cambridge, Massachusetts
-        </footer>
-      </div>
+        <a href="#contact" class="scroll-arrow" aria-label="Scroll to Contact">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </a>
+      </section>
+
+      <!-- ── Contact ─────────────────────────────────────────────── -->
+      <section class="section" id="contact">
+        <h2 class="section-label">Contact</h2>
+        <div class="section-rule"></div>
+
+        <p class="contact-desc">
+          The clearest public references are Google Scholar and LinkedIn.
+          More material is in progress.
+        </p>
+        <div class="ext-links">
+          <a href="https://scholar.google.com/citations?user=tsQM3hoAAAAJ" target="_blank" rel="noreferrer">Google Scholar</a>
+          <a href="https://www.linkedin.com/in/alessandro-buzzi-373a35289/" target="_blank" rel="noreferrer">LinkedIn</a>
+        </div>
+
+        <!-- Decorative placeholder (right side) -->
+        <div class="contact-deco"></div>
+      </section>
+
+      <!-- ── Footer ─────────────────────────────────────────────── -->
+      <footer class="site-footer">
+        <span class="footer-text">Alessandro Buzzi &middot; Cambridge, Massachusetts</span>
+      </footer>
+
     </div>
 
     <script>
+      // Debug overlay
       document.addEventListener("keydown", function (e) {
         if (e.key === "d") document.body.classList.toggle("debug");
       });
 
-      const sections = document.querySelectorAll("section[id]");
-      const navLinks = document.querySelectorAll('.site-nav a[href^="#"]');
-      const navObserver = new IntersectionObserver(
+      // Fixed nav: visible once hero scrolls out
+      const heroEl  = document.querySelector('.hero');
+      const fixedNav = document.querySelector('.fixed-nav');
+      new IntersectionObserver(
+        ([entry]) => fixedNav.classList.toggle('visible', !entry.isIntersecting),
+        { threshold: 0.05 }
+      ).observe(heroEl);
+
+      // Active nav state (applies to both hero nav and fixed nav)
+      const allSections = document.querySelectorAll("section[id]");
+      const navLinks    = document.querySelectorAll('.site-nav a[href^="#"]');
+      const sectionObserver = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
@@ -277,7 +294,7 @@
         },
         { rootMargin: "-20% 0px -60% 0px" }
       );
-      sections.forEach((s) => navObserver.observe(s));
+      allSections.forEach((s) => sectionObserver.observe(s));
     </script>
   </body>
 </html>

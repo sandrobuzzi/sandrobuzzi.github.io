@@ -33,4 +33,8 @@
   /* Layout */
   --container: 900px;
   --col-gap: 24px;
+
+  /* Page grid — 14 cols × square cells, 24px gap */
+  --gap:  24px;
+  --cell: calc((100vw - 13 * var(--gap)) / 14);
 }

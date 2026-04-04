@@ -21,9 +21,6 @@
   grid-template-rows: 1fr repeat(7, var(--cell)) 1fr;
   gap: var(--gap);
 
-  --gap:  24px;
-  --cell: calc((100vw - 13 * var(--gap)) / 14);
-
   /* ── Hero type sizes — edit here ── */
   --name-size:     clamp(2rem, 5.2vw, 5.2rem);
   --subtitle-size: 2rem;
@@ -215,8 +212,29 @@
   filter: grayscale(0%);
 }
 
-/* ─── Section-level spacing overrides ───────────────────────────────────── */
+/* ─── Scroll arrow (row 9, top-aligned) ─────────────────────────────────── */
 
-#publications {
-  padding-top: var(--sp-8);
+.scroll-arrow {
+  grid-column: 7 / 9;
+  grid-row: 9;
+  justify-self: center;
+  align-self: start;
+  display: flex;
+  color: var(--text);
+  opacity: 0.45;
+  transition: opacity 180ms ease;
+  animation: arrow-drift 2.6s ease-in-out infinite;
+  z-index: 2;
+}
+
+.scroll-arrow svg {
+  width:  calc(var(--cell) * 0.55);
+  height: calc(var(--cell) * 0.55);
+}
+
+.scroll-arrow:hover { opacity: 0.9; }
+
+@keyframes arrow-drift {
+  0%, 100% { transform: translateY(-6px); opacity: 0.35; }
+  50%       { transform: translateY(4px);  opacity: 0.7;  }
 }
